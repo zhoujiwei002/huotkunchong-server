@@ -2,5 +2,11 @@
   "version": 2,
   "buildCommand": "cd server && npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "server/dist",
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "cd server && npm install --legacy-peer-deps",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/server/api/index.js"
+    }
+  ]
 }
